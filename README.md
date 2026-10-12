@@ -14,7 +14,7 @@ Fußballtrainings mit Datum, Inhalt und Zahlungsstatus. Pro Training werden 25 �
 2. `.env.example` nach `.env.local` kopieren und die Supabase-Projekt-URL sowie den Publishable Key eintragen.
 3. `npm run dev`
 
-`npm run build` erstellt die Produktionsversion. In Vercel müssen `NEXT_PUBLIC_SUPABASE_URL` und `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` gesetzt sein.
+`npm run build` erstellt die Produktionsversion. Das zugehörige Supabase-Projekt ist mit seinem öffentlichen Publishable Key vorkonfiguriert. Optional lassen sich `NEXT_PUBLIC_SUPABASE_URL` und `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in Vercel überschreiben. Der öffentliche Key verleiht ohne Anmeldung keinen Zugriff auf Trainingsdaten.
 
 ## Datenbank
 
@@ -22,6 +22,6 @@ Die SQL-Definition in `supabase/schema.sql` wurde im zugehörigen Supabase-Proje
 
 ## Anmeldung
 
-Ein Konto kann in der App erstellt werden. Wenn Supabase die E-Mail-Bestätigung verlangt, muss der Link aus dem Postfach bestätigt werden. Anschließend mit E-Mail und Passwort anmelden.
+Nach dem Vercel-Import in Supabase unter Authentication → URL Configuration die neue App-Adresse als Site URL und Redirect URL hinterlegen. Ein Konto kann in der App erstellt werden. Wenn Supabase die E-Mail-Bestätigung verlangt, muss der Link aus dem Postfach bestätigt werden. Anschließend mit E-Mail und Passwort anmelden.
 
 Die zuvor auf ChatGPT Sites gespeicherten Einträge sind nicht in dieser Datenbank enthalten. Die ursprüngliche App bleibt verfügbar.
